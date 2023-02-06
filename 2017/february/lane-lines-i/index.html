@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <script type="application/ld+json">
+
+{  
+  "@context":"http://schema.org",
+  "@type":"Website",
+  "@id":"https:\/\/moisesvw.github.io\/",
+  "author": {
+    "@type": "Person",
+    "name": "Moisés Vargas",
+    
+  },
+  "name":"Machine Learning Stuffs",
+  "description":"Finding Lane Lines on the Road Intro In self-driving car detecting lane lines, it is necessary to guide vehicles in the roads This project shows several techniques needed to achieve this important task. The the goal is to find both left and right lane lines by plotting colored lines over its respective lane lines pixels in the image.\nFinding Lane Lines on the Road\nThe goals of this project are the following:",
+  "url":"https:\/\/moisesvw.github.io\/2017\/february\/lane-lines-i\/",
+  "keywords":"[, machine-learning, self-driving-cars]"
+}
+
+</script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.110.0 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="author" content="Moisés Vargas">
+<meta name="keywords" content=", machine-learning, self-driving-cars">
+<meta name="description" content="Finding Lane Lines on the Road Intro In self-driving car detecting lane lines, it is necessary to guide vehicles in the roads This project shows several techniques needed to achieve this important task. The the goal is to find both left and right lane lines by plotting colored lines over its respective lane lines pixels in the image.
+Finding Lane Lines on the Road
+The goals of this project are the following:">
+
+
+<meta property="og:description" content="Finding Lane Lines on the Road Intro In self-driving car detecting lane lines, it is necessary to guide vehicles in the roads This project shows several techniques needed to achieve this important task. The the goal is to find both left and right lane lines by plotting colored lines over its respective lane lines pixels in the image.
+Finding Lane Lines on the Road
+The goals of this project are the following:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Lane Lines I">
+<meta name="twitter:title" content="Lane Lines I">
+<meta property="og:url" content="https://moisesvw.github.io/2017/february/lane-lines-i/">
+<meta property="twitter:url" content="https://moisesvw.github.io/2017/february/lane-lines-i/">
+<meta property="og:site_name" content="Machine Learning Stuffs">
+<meta property="og:description" content="Finding Lane Lines on the Road Intro In self-driving car detecting lane lines, it is necessary to guide vehicles in the roads This project shows several techniques needed to achieve this important task. The the goal is to find both left and right lane lines by plotting colored lines over its respective lane lines pixels in the image.
+Finding Lane Lines on the Road
+The goals of this project are the following:">
+<meta name="twitter:description" content="Finding Lane Lines on the Road Intro In self-driving car detecting lane lines, it is necessary to guide vehicles in the roads This project shows several techniques needed to achieve this important task. The the goal is to find both left and right lane lines by plotting colored lines over its respective lane lines pixels in the image.
+Finding Lane Lines on the Road
+The goals of this project are the following:">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2017-02-23T21:08:37">
+  
+  
+    <meta property="article:modified_time" content="2017-02-23T00:00:00">
+  
+  
+  
+  
+
+
+<meta name="twitter:card" content="summary">
+
+  <meta name="twitter:site" content="@moisesvw">
+
+
+  <meta name="twitter:creator" content="@moisesvw">
+
+
+
+
+
+
+
+
+
+
+
+    <title>Lane Lines I</title>
+
+    <link rel="icon" href="https://moisesvw.github.io/robot-network-icon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://moisesvw.github.io/2017/february/lane-lines-i/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    
+    
+    <link rel="stylesheet" href="https://moisesvw.github.io/css/style-h6ccsoet3mzkbb0wngshlfbaweimexgqcxj0h5hu4h82olsdzz6wmqdkajm.min.css" />
+    
+    
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-92619527-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="2">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="/" aria-label="Go to homepage">Machine Learning Stuffs</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="/#about" aria-label="Open the link: /#about">
+    
+    
+    
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="2">
+  <div class="sidebar-container">
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/archives" title="Archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/moisesvw" target="_blank" rel="noopener" title="GitHub">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://www.linkedin.com/in/moisesvw/" target="_blank" rel="noopener" title="LinkedIn">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-linkedin"></i>
+      
+      <span class="sidebar-button-desc">LinkedIn</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://twitter.com/moisesvw" target="_blank" rel="noopener" title="Twitter">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-twitter"></i>
+      
+      <span class="sidebar-button-desc">Twitter</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="2"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" id="top">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title">
+      Lane Lines I
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2017-02-23T21:08:37-05:00">
+        
+  February 23, 2017
+
+      </time>
+    
+    
+  </div>
+
+</div>
+          
+          <div class="post-content markdown">
+            <div class="main-content-wrap">
+              <h1 id="finding-lane-lines-on-the-road"><strong>Finding Lane Lines on the Road</strong></h1>
+<h2 id="intro">Intro</h2>
+<p>In self-driving car detecting lane lines, it is necessary to guide vehicles in the roads
+This project shows several techniques needed to achieve this important task. The
+the goal is to find both left and right lane lines by plotting colored lines over its
+respective lane lines pixels in the image.</p>
+<hr>
+<p><strong>Finding Lane Lines on the Road</strong></p>
+<p>The goals of this project are the following:</p>
+<ul>
+<li>Process input image and detect lines</li>
+<li>Filter caught lines to match the lane lines</li>
+<li>Drawn the left and right corresponding lane lines into the image</li>
+<li>Make a pipeline that finds lane lines on the road</li>
+<li>Apply this pipeline to  the test set images and videos provided</li>
+<li>Reflect on your work in a written report</li>
+</ul>
+<hr>
+<h3 id="reflection">Reflection</h3>
+<h3 id="1-description">1. Description</h3>
+<p>The following steps describe how the pipeline was built.</p>
+<ol>
+<li>
+<p>Detect Image Edges
+Using the canny technique to determine edges overall image, it requires the input
+image to be of one channel (grayscale), then a Gaussian function with some kernel
+configuration should be applied to remove some noise and finally plug the output of this
+to canny function.</p>
+</li>
+<li>
+<p>Detect lines from Hough Space
+This step detects lines from a given image, to facilitate it the input image already one with only edges and in addition, it receives a mask as the region of interest to only focus searching lines in the given area. The output is a collection
+of lines(two points) of different slopes</p>
+</li>
+<li>
+<p>Drawn the lines which overlap on lane lines.</p>
+</li>
+</ol>
+<pre><code>The `draw_lines` function was extended to improve the drawing of the lane lines,
+the hough lines of given image were filtered to separate right lane lines from left lane lines. Also, to filter out noisy lines that do not correspond to the lane lanes.
+Hough lines with positive slope are right ones, and the ones with negative slope are the left ones.
+Lines wich probably are the ones that overlap the lane lines should have slopes between this range
+(0.5..0.9) and (-0.5..-0.9) other than those ranges are considered noise.
+
+Having the curated list of lines the next is join all of these by averaging slope and center points.
+Then using this slope(m) and center points (x1, y1) extrapolate the line with the help of this formula (y - y1) = m(x - y1); in turn, out this will lead to only two lines for left and right lanes. I've
+created a helpers function `extrapolate_line` and `filter_lines` to keep code of `draw_lines` simple and
+clean as possible.
+
+Sudden movements from the lines between frames were tackle by averaging over all slopes, and centers of all frames, it was necessary to soften the drawn between frames. Also, I consider only average over the last 100 parameters which behave well. I did experiments with ten, but lines were shaking a little, then tried
+1000 and lines some times get out of the lane but looks like 100 it is a good value for keeping the k last 
+parameters over last frames.
+
+As an improvement to understand what is happening in the image, I added the averaged slope and the current center
+for every frame.
+</code></pre>
+<p>After work over these three steps, now there is a foundation that can be used to create the functions
+<code>get_canny_edges</code>, <code>detect_lines</code> and <code>drawn_lane_lines</code> which will join all provided helper functions
+to detect and draw the lines over the test images as shown above:</p>
+<p><img src="/carnd/p1/grayscale.jpg" alt="alt text" title="Grayscale"></p>
+<p><img src="/carnd/p1/image_2.jpg" alt="alt text" title="solidYellowCurve"></p>
+<p>I&rsquo;ve tried to play with <code>region_of_interest</code> and <code>HSV</code> format to improve the work above; you can find this
+code at the very bottom of the notebook.</p>
+<h3 id="2-identify-potential-shortcomings-with-your-current-pipeline">2. Identify potential shortcomings with your current pipeline</h3>
+<p>I noted that the slope of different lines vary a lot it makes some times the line to
+don&rsquo;t&rsquo; stick exactly in the lane line in some curves.</p>
+<p>Another shortcoming could be if the road has shadows and other residual material that is near
+the lane lines averaging the slopes and center may don&rsquo;t match at all on the lane lines.</p>
+<h3 id="3-suggest-possible-improvements-to-your-pipeline">3. Suggest possible improvements to your pipeline</h3>
+<p>I&rsquo;ve tried using the function cv2.inRange for filter out colors except yellow and white this way
+identifying lines could be much more easy for canny and hough spaces, but it doesn&rsquo;t show to much
+The improvement since tunning and guessing the color ranges for this seem tricky. A possible improvement
+should be trying to parametrize well this function get better results.</p>
+<p>Another improvement could figure it out how to adapt automatically the bottom and top position of
+the lines to match the image, for example for challenge video the lines do well but one line is taller than the other. Would be nice to have a way to get the lines in the same top or bottom level.</p>
+
+              
+
+
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+            
+            <div class="post-actions-wrap">
+  <nav>
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="/2017/march/traffic-sign-recognition/" data-tooltip="Traffic Sign Recognition">
+          
+            <i class="fa fa-angle-left"></i>
+            <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+          </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--disabled">
+          
+            <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+            <i class="fa fa-angle-right"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </nav>
+  <ul class="post-actions post-action-share">
+    
+      <li class="post-action hide-lg hide-md hide-sm">
+        <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+          <i class="fa fa-share-alt"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fmoisesvw.github.io%2f2017%2ffebruary%2flane-lines-i%2f">
+          <i class="fa fa-google-plus"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fmoisesvw.github.io%2f2017%2ffebruary%2flane-lines-i%2f">
+          <i class="fa fa-facebook-official"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fmoisesvw.github.io%2f2017%2ffebruary%2flane-lines-i%2f">
+          <i class="fa fa-twitter"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+            
+  
+
+
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2023 Moises Vargas. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="2">
+        <div class="post-actions-wrap">
+  <nav>
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="/2017/march/traffic-sign-recognition/" data-tooltip="Traffic Sign Recognition">
+          
+            <i class="fa fa-angle-left"></i>
+            <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+          </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--disabled">
+          
+            <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+            <i class="fa fa-angle-right"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </nav>
+  <ul class="post-actions post-action-share">
+    
+      <li class="post-action hide-lg hide-md hide-sm">
+        <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+          <i class="fa fa-share-alt"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fmoisesvw.github.io%2f2017%2ffebruary%2flane-lines-i%2f">
+          <i class="fa fa-google-plus"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fmoisesvw.github.io%2f2017%2ffebruary%2flane-lines-i%2f">
+          <i class="fa fa-facebook-official"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fmoisesvw.github.io%2f2017%2ffebruary%2flane-lines-i%2f">
+          <i class="fa fa-twitter"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+      </div>
+      
+
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-times"></i>
+    </div>
+    
+    <h4 id="about-card-name">Moisés Vargas</h4>
+    
+      <div id="about-card-bio">Life Long Learner</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Machine Learning Engineer
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker-alt"></i>
+        <br/>
+        Medellín
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      
+      <div id="cover" style="background-image:url('https://moisesvw.github.io/images/sfbridge_.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script src="https://moisesvw.github.io/js/script-yqzy9wdlzix4lbbwdnzvwx3egsne77earqmn73v9uno8aupuph8wfguccut.min.js"></script>
+
+
+
+
+
+
+    
+  </body>
+</html>
+

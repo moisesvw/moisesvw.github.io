@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Machine Learning Stuffs</title>
+    <link>https://moisesvw.github.io/</link>
+    <description>Recent content on Machine Learning Stuffs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 14 Jun 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://moisesvw.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PNASNet-5 Transfer Learning to Predict Animal Attributes</title>
+      <link>https://moisesvw.github.io/projects/pnasnet-5-transfer-learning-to-predict-animal-attributes/</link>
+      <pubDate>Thu, 14 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://moisesvw.github.io/projects/pnasnet-5-transfer-learning-to-predict-animal-attributes/</guid>
+      <description>This project aims to build a predictive model that learn to identify attributes associated with each animal. It was part of hackerearth.com Challenge. It provides 18.000 images of 50 different categories, 12.600 have animal characteristics. These characteristics are treated as labels to train a predictive model that learns to map animal images to attributes. This set of 12600 images will be the training set.
+Metrics There are 85 different attributes per image in the training set.</description>
+    </item>
+    
+    <item>
+      <title>Self Driving Cars (10) Projects </title>
+      <link>https://moisesvw.github.io/projects/self-driving-cars-10-projects/</link>
+      <pubDate>Thu, 07 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://moisesvw.github.io/projects/self-driving-cars-10-projects/</guid>
+      <description>About Here there are all of the projects I&amp;rsquo;ve worked on during the Udacity&amp;rsquo;s Self Driving Car Engineer Nanodegree program.
+Term 1 Finding Lane Lines I have detected highway lane lines on a video stream — used OpenCV image analysis techniques to identify lane lines, including Hough Transforms and Canny edge detection.
+Traffic Sign Classifier Built and trained a deep neural network to classify traffic signs, using TensorFlow. Experimented with different network architectures.</description>
+    </item>
+    
+    <item>
+      <title>Machine Learning Engineer Nanodegree (7) Projects </title>
+      <link>https://moisesvw.github.io/projects/machine-learning-engineer-nanodegree-7-projects/</link>
+      <pubDate>Sat, 07 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://moisesvw.github.io/projects/machine-learning-engineer-nanodegree-7-projects/</guid>
+      <description>Machine Learning Engineer Nanodegree About This repository contains projects associated with Udacity&amp;rsquo;s Machine Learning Engineer Nanodegree, that I&amp;rsquo;ve worked on. All the code can be find here https://github.com/moisesvw/udacity-machine-learning
+Projects 1 - Predicting Boston Housing Pricing Built a model to predict the value of a given house in the Boston real estate market using various statistical analysis tools. Identified the best price that a client can sell their home utilizing machine learning.</description>
+    </item>
+    
+    <item>
+      <title>Preparing to do Deep Learning</title>
+      <link>https://moisesvw.github.io/2018/march/preparing-to-do-deep-learning/</link>
+      <pubDate>Fri, 09 Mar 2018 18:27:04 -0500</pubDate>
+      
+      <guid>https://moisesvw.github.io/2018/march/preparing-to-do-deep-learning/</guid>
+      <description>This post&amp;rsquo;s about how to install TensorFlow, numpy, OpenCV and Jupyter to be prepared to run Deep Learning models in a local environment using either python 2.7 or python 3.6.
+Miniconda Miniconda is a package manager that allows creating virtual environments; this enables different python versions and libraries isolated from others. The next link points to the miniconda version for different O.S platforms https://conda.io/miniconda.html. The Mac OS X version it is used in this tutorial.</description>
+    </item>
+    
+    <item>
+      <title>Preparing to do Deep Learning</title>
+      <link>https://moisesvw.github.io/posts/how-to-install-tensorflow-1.6/</link>
+      <pubDate>Fri, 09 Mar 2018 18:27:04 -0500</pubDate>
+      
+      <guid>https://moisesvw.github.io/posts/how-to-install-tensorflow-1.6/</guid>
+      <description>This post&amp;rsquo;s about how to install TensorFlow, numpy, OpenCV and Jupyter to be prepared to run Deep Learning models in a local environment using either python 2.7 or python 3.6.
+Miniconda Miniconda is a package manager that allows creating virtual environments; this enables different python versions and libraries isolated from others. The next link points to the miniconda version for different O.S platforms https://conda.io/miniconda.html. The Mac OS X version it is used in this tutorial.</description>
+    </item>
+    
+    <item>
+      <title>Deep Learning on LeNet5</title>
+      <link>https://moisesvw.github.io/2017/november/deep-learning-on-lenet5/</link>
+      <pubDate>Wed, 01 Nov 2017 00:00:00 -0500</pubDate>
+      
+      <guid>https://moisesvw.github.io/2017/november/deep-learning-on-lenet5/</guid>
+      <description>Machine Learning Engineer Nanodegree Algorithms and Techniques Convolutional Neural Network (ConvNet) as classifier. The network has several parameters that needs to be tuned, including number of epochs, batch size, learning rate, max pool layers and dropout layers. This technique and its parameters are discussed above.
+The ConvNet is trained using back-propagation to learn the weight parameters, these weights are used to activate neurons. The main difference of the ConvNet with respect to a regular neural network is that it is specifically designed to recognize visual patterns directly from the image pixels [4].</description>
+    </item>
+    
+    <item>
+      <title>Traffic Sign Recognition</title>
+      <link>https://moisesvw.github.io/2017/march/traffic-sign-recognition/</link>
+      <pubDate>Mon, 27 Mar 2017 00:00:00 -0500</pubDate>
+      
+      <guid>https://moisesvw.github.io/2017/march/traffic-sign-recognition/</guid>
+      <description>Build a Traffic Sign Recognition Project The goals/steps of this project are the following:
+Load the data set (see below for links to the project data set) Explore, summarize and visualize the data set Design, train and test a model architecture Use the model to make predictions on new images Analyze the softmax probabilities of the unseen photos Summarize the results with a written report Data Set Summary &amp;amp; Exploration 1.</description>
+    </item>
+    
+    <item>
+      <title>Lane Lines I</title>
+      <link>https://moisesvw.github.io/2017/february/lane-lines-i/</link>
+      <pubDate>Thu, 23 Feb 2017 21:08:37 -0500</pubDate>
+      
+      <guid>https://moisesvw.github.io/2017/february/lane-lines-i/</guid>
+      <description>Finding Lane Lines on the Road Intro In self-driving car detecting lane lines, it is necessary to guide vehicles in the roads This project shows several techniques needed to achieve this important task. The the goal is to find both left and right lane lines by plotting colored lines over its respective lane lines pixels in the image.
+Finding Lane Lines on the Road
+The goals of this project are the following:</description>
+    </item>
+    
+  </channel>
+</rss>
