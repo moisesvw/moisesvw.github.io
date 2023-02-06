@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Machine-learnings on Machine Learning Stuffs</title>
+    <link>https://moisesvw.github.io/machine-learning/</link>
+    <description>Recent content in Machine-learnings on Machine Learning Stuffs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 01 Nov 2017 00:00:00 -0500</lastBuildDate><atom:link href="https://moisesvw.github.io/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Deep Learning on LeNet5</title>
+      <link>https://moisesvw.github.io/2017/november/deep-learning-on-lenet5/</link>
+      <pubDate>Wed, 01 Nov 2017 00:00:00 -0500</pubDate>
+      
+      <guid>https://moisesvw.github.io/2017/november/deep-learning-on-lenet5/</guid>
+      <description>Machine Learning Engineer Nanodegree Algorithms and Techniques Convolutional Neural Network (ConvNet) as classifier. The network has several parameters that needs to be tuned, including number of epochs, batch size, learning rate, max pool layers and dropout layers. This technique and its parameters are discussed above.
+The ConvNet is trained using back-propagation to learn the weight parameters, these weights are used to activate neurons. The main difference of the ConvNet with respect to a regular neural network is that it is specifically designed to recognize visual patterns directly from the image pixels [4].</description>
+    </item>
+    
+  </channel>
+</rss>
