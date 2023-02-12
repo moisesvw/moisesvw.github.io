@@ -29,11 +29,11 @@ Traffic Sign Classifier Built and trained a deep neural network to classify traf
     </item>
     
     <item>
-      <title>Machine Learning Engineer Nanodegree (7) Projects </title>
-      <link>https://moisesvw.github.io/projects/machine-learning-engineer-nanodegree-7-projects/</link>
+      <title>Machine Learning Engineer Nanodegree Projects </title>
+      <link>https://moisesvw.github.io/projects/machine-learning-engineer-nanodegree-projects/</link>
       <pubDate>Sat, 07 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://moisesvw.github.io/projects/machine-learning-engineer-nanodegree-7-projects/</guid>
+      <guid>https://moisesvw.github.io/projects/machine-learning-engineer-nanodegree-projects/</guid>
       <description>Machine Learning Engineer Nanodegree About This repository contains projects associated with Udacity&amp;rsquo;s Machine Learning Engineer Nanodegree, that I&amp;rsquo;ve worked on. All the code can be find here https://github.com/moisesvw/udacity-machine-learning
 Projects 1 - Predicting Boston Housing Pricing Built a model to predict the value of a given house in the Boston real estate market using various statistical analysis tools. Identified the best price that a client can sell their home utilizing machine learning.</description>
     </item>
